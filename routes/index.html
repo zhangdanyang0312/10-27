@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+        <script>
+            $(function(){
+                $.ajax({
+                    url:'http://localhost:3000',
+                    type:'POST',
+                    success:function(e){
+                        console.log(e)
+                        var st="";
+                        for(var i=0;i<e.length;i++){
+                            st+="<tr><td>"+e[i].name+"</td><td>"+e[i].age+"</td></tr>"
+                        }
+                        console.log(st)
+                        $("table").html(st);
+
+                        
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+    <table border="1" cellspacing="0" cellpadding="10">
+       
+    </table>
+    </body>
+</html>
